@@ -1,0 +1,27 @@
+<div>
+  <div class="notiborderglow"></div>
+  <p class="notititle">
+    La cantidad {{ myShoppingCart.length}}
+  </p>
+  <p class="notibody">
+    Total: $ {{ total}}
+  </p>
+  <p class="notibody">
+    Fecha de hoy: {{ today | date: 'short'}}
+  </p>
+  <p class="notibody">
+    Última vez: {{ today | timeAgo}}
+  </p>
+  <p class="notibody">
+    Otra fecha: {{ today | date: 'yyyy.dd.MM'}}
+  </p>
+  <p class="notititle">
+    {{'hOLa comprAdORES' | uppercase}}
+  </p>
+  <div class="products--grid">
+    <app-product
+    [product]="product"
+    *ngFor="let product of products"
+    (addedProduct)="OnAddToShoppinCart($event)"></app-product>
+  </div>
+</div>
